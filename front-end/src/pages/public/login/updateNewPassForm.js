@@ -90,7 +90,7 @@ function UpdateNewPassForm({
                 type="password"
                 name="password"
                 id="password"
-                placeholder="Mật khẩu mới"
+                placeholder="New Password"
                 value={values.password}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -113,7 +113,7 @@ function UpdateNewPassForm({
                 type="password"
                 name="confirmPassword"
                 id="confirmPassword"
-                placeholder="Nhập lại mật khẩu"
+                placeholder="Re-enter password"
                 value={values.confirmPassword}
                 onChange={handleChange}
                 onBlur={handleBlur}

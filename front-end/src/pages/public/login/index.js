@@ -64,7 +64,7 @@ export default function Login() {
                         rounded
                         "
               >
-                <i className="fas fa-globe"></i>&ensp; Indiana
+                {/* <i className="fas fa-globe"></i>&ensp; Indiana */}
               </button>
             </div>
           </div>

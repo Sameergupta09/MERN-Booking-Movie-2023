@@ -61,7 +61,7 @@ exports.sendEmailFeedBack = async (req, res, next) => {
     const { email, content, subtitle } = req.body;
     const user = await User.findOne({ email: req.body.email });
     if (!user) {
-      const err = new Error("Email không chính xác hoặc không tồn tại");
+      const err = new Error("Email is incorrect or does not exist");
       err.statusCode = 400;
       return next(err);
     } else {
@@ -78,10 +78,10 @@ exports.sendEmailFeedBack = async (req, res, next) => {
         to: email,
         subject: subtitle,
         text: `
-          Chào bạn! \
-          Tài khoản người dùng ${email}\
+          Hello! \
+          User account ${email}\
           ${content}
-          Cảm ơn bạn đã góp ý,\
+          Thanks for your feedback,\
           React Flix Cinema`,
       });
       res.status(200).json({ checkSend: true });

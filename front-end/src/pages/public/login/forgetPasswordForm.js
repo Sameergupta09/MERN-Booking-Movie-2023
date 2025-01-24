@@ -67,7 +67,7 @@ function ForgetForm({ setIsActive, isActive, setEmail, setSize }) {
             className="px-0 md:px-5 lg:px-10 py-3 col-span-2"
             onSubmit={handleSubmit}
           >
-            <h1 className="text-[17px] font-medium mb-3">QUÊN MẬT KHẨU</h1>
+            <h1 className="text-[17px] font-medium mb-3">FORGOT PASSWORD</h1>
             <p className="pt-1 text-center text-sm font-medium text-[#e01414]">
               {stateError}
             </p>

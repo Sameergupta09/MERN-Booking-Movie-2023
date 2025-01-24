@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie"
 // IMPORT REDUX
 import { authLogout } from "../../../redux/actions/authActions";
-import { changeLanguage } from "../../../redux/actions/languageAction";
+// import { changeLanguage } from "../../../redux/actions/languageAction";
 // IMPORT UI
 import Data from "./TranslationEnglish/Data.json"
 import Logo from "../../../assets/mylogo.png";
@@ -25,7 +25,7 @@ function HeaderPublic() {
   const navigate = useNavigate();
   const cookies = new Cookies()
   const [isOpen, setIsOpen] = useState(false);
-  const [isActive, setIsActive] = useState(true)
+  // const [isActive, setIsActive] = useState(true)
   const [content, setContent] = useState("")
   const language = useSelector(state => state.language.language)
   const { user, isAuthenticated } = useSelector((state) => state.user);
@@ -116,7 +116,7 @@ function HeaderPublic() {
               </div>
             </div>
             <div className="flex justify-between">
-              <button 
+              {/* <button 
                 style={{color: isActive === true ? "red" : ""}}
                 onClick={() => {
                   dispatch(changeLanguage("Vietnamese"))
@@ -126,8 +126,8 @@ function HeaderPublic() {
               className="text-white text-[11px] md:text-[12px]">
                 <i className="fas fa-globe"></i>
                 &ensp;VN &ensp;
-              </button>
-              <button 
+              </button> */}
+              {/* <button 
                
                 onClick={() => {
                   dispatch(changeLanguage("English"))
@@ -139,7 +139,7 @@ function HeaderPublic() {
                 <span style={{color: isActive === false ? "red" : ""}}>
                   EN
                 </span>
-              </button>
+              </button> */}
               <Menu>
                 <MenuHandler>
                   <Button className="text-white px-4 ml-0 md:ml-3 py-2 bg-transparent hover:bg-none font-[400] shadow-none text-[14px] capitalize">

@@ -9,7 +9,7 @@ exports.register = async (req, res, next) => {
   try {
     const user = await User.findOne({ email: req.body.email });
     if (user) {
-      const err = new Error("Email đã tồn tại ! Vui lòng thử lại");
+      const err = new Error("Email already exists! Please try again.");
       err.statusCode = 400;
       return next(err);
     } else {
@@ -25,12 +25,12 @@ exports.login = async (req, res, next) => {
   try {
     const user = await User.findOne({ email: req.body.email }); //kiểm tra email
     if (!user) {
-      const err = new Error("Email không chính xác - Vui lòng nhập lại");
+      const err = new Error("Incorrect email - Please re-enter");
       err.statusCode = 400;
       return next(err);
     }
     if (bcrypt.compareSync(req.body.password, user.password)) {
-      //so sánh pw user nhập vào và pw (hash) in db
+      //compare user entered pw and pw (hash) in db
       const token = jwt.sign({ userId: user._id }, process.env.APP_SECRET);
       res.status(200).json({
         token,
@@ -39,7 +39,7 @@ exports.login = async (req, res, next) => {
         user_position: user.position
       });
     } else {
-      const err = new Error("Mật khẩu không chính xác - Vui lòng nhập lại");
+      const err = new Error("Password is incorrect - Please re-enter");
       err.statusCode = 400;
       return next(err);
     }
@@ -99,7 +99,7 @@ exports.changePasswordUser = async (req, res, next) => {
       user.save();
       res.status(200).json(user);
     } else {
-      const err = new Error("Mật khẩu hiện tại không đúng");
+      const err = new Error("Current password is incorrect");
       err.statusCode = 400;
       return next(err);
     }
@@ -113,7 +113,7 @@ exports.forgotPassword = async (req, res, next) => {
     const { email } = req.body;
     const user = await User.findOne({ email: req.body.email });
     if (!user) {
-      const err = new Error("Email không chính xác hoặc không tồn tại");
+      const err = new Error("Email is incorrect or does not exist");
       err.statusCode = 400;
       return next(err);
     }
@@ -136,10 +136,10 @@ exports.forgotPassword = async (req, res, next) => {
       to: email,
       subject: "React Flix Account",
       text: `
-      Chào bạn! bạn có phải là người muốn reset password này không?\
-      Hãy sử dụng mã code này để cập nhật lại mật khẩu cho tài khoản ${email}\n
-      Đây là mã code của bạn: ${code}\
-      Cảm ơn,\
+      Hi! Are you the one who wants to reset this password?\
+      Use this code to update the password for the account ${email}\n
+      Here is your code: ${code}\
+      Thank you,\
       React Flix Cinema
     `,
     });
