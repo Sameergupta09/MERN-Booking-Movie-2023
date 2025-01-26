@@ -54,7 +54,7 @@ function SupportForm() {
     })
     if (feedBack.userName !== "" || feedBack.email !== "" || feedBack.phone !== "" || feedBack.content !== "") {
       toast.success(
-        "Đã gửi góp ý của bạn thành công - check Email lại sau nhá !",
+        "Your comment has been sent successfully - check your email later.!",
         {
           position: toast.POSITION.BOTTOM_LEFT,
         }
@@ -86,7 +86,7 @@ function SupportForm() {
                   Please give your feedback about our system
                 </h1>
                 <p className="font-thin text-[12px] lg:text-[13px]">Email: supports@reactflix.com</p>
-                <p className="font-thin text-[12px] lg:text-[13px]">Đường dây nóng: 19000000</p>
+                <p className="font-thin text-[12px] lg:text-[13px]">Hotline: 19000000</p>
               </div>
               <div className="bg-[#1d1c1c] p-2 md:p-5 mt-3">
                 <div className="grid grid-cols-3 gap-x-2 mb-5">

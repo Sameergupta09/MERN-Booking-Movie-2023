@@ -215,7 +215,7 @@ transaction/Combo popcorn - select Seat - proceed to payment
                             <p
                               data-start="good luck!"
                               data-text="Let's go!"
-                              data-title="Xem thêm"
+                              data-title="See more"
                             ></p>
                           </button>
                         </div>
