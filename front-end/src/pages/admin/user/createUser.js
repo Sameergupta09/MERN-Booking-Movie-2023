@@ -32,7 +32,7 @@ function CreateUser() {
         )
       );
     resetForm({});
-    toast.success("Đã thêm 1 người dùng hệ thống thành công !", {
+    toast.success("Added 1 system user successfully!", {
       position: toast.POSITION.BOTTOM_LEFT,
       className: "text-black",
     });

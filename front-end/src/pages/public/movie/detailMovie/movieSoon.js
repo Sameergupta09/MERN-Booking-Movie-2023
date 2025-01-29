@@ -125,7 +125,7 @@ const DetailMovieSoon = () => {
                               : content.movieDetail.duration}{" "}
                             :{" "}
                           </span>
-                          {movieSoon.duration} phút
+                          {movieSoon.duration} minute
                         </p>
                         <p>
                           <span className="text-gray-300">

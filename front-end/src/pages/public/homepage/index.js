@@ -9,8 +9,8 @@ import { getAllEvent } from "../../../redux/actions/eventActions";
 import SpinnerLoading from "../components/spinnerLoading";
 import { useSelector, useDispatch } from "react-redux";
 import FooterPublic from "../components/footerPublic";
-import Blogs from "../blog&event/blogs";
-import Events from "../blog&event/events";
+// import Blogs from "../blog&event/blogs";
+// import Events from "../blog&event/events";
 import slide1 from "../../../assets/slide_1.webp";
 import slide2 from "../../../assets/slide_2.jpg";
 import slide3 from "../../../assets/slide_3.png";
@@ -18,8 +18,8 @@ import Data from "../components/TranslationEnglish/Data.json";
 
 function HomePage() {
   const dispatch = useDispatch();
-  const blogs = useSelector((state) => state.blogs.blogs);
-  const events = useSelector((state) => state.events.events);
+  // const blogs = useSelector((state) => state.blogs.blogs);
+  // const events = useSelector((state) => state.events.events);
   const [loadingPage, setLoadingPage] = useState(false);
   const [stateMovie, setStateMovie] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -210,14 +210,16 @@ function HomePage() {
                   </Link>
                 </div>
               </div>
-              {/* RENDER PHIM ĐANG CHIẾU OR PHIM SẮP CHIẾU */}
+              {/* RENDER MOVIE NOW SHOWING OR MOVIE TO BE SHOWN UP */}
               {stateMovie === true ? <MovieNow /> : <MovieSoon />}
-              <div className="pt-20">
+
+
+              {/* <div className="pt-20">
                 <button
                   disabled
                   className="text-white py-[17px] uppercase text-[15px] border-b-[3px] border-[#E50914]"
                 >
-                  {content === "" ? "review phim" : content.title.blogfilm}
+                  {content === "" ? "movie review" : content.title.blogfilm}
                 </button>
                 <div className="grid lg:grid-cols-2 grid-cols-1 py-10 gap-4">
                   {blogs.map((blog, index) => (
@@ -246,9 +248,12 @@ function HomePage() {
                     </button>
                   </div>
                 </div>
-              </div>
-              {/* sự kiện */}
-              <div className="pt-5">
+              </div> */}
+
+
+              {/* event*/}
+              
+              {/* <div className="pt-5">
                 <button
                   disabled
                   className="text-white py-[17px] uppercase text-[15px] border-b-[3px] mb-10 border-[#E50914]"
@@ -278,9 +283,9 @@ function HomePage() {
                     </button>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
-              {/* về chúng tôi */}
+              {/* about us */}
               <div className="py-5">
                 <button className="text-white py-[17px]  text-[15px] border-b-[3px] mb-10 border-[#E50914]">
                   REACT FLIX

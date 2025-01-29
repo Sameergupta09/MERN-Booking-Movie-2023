@@ -20,7 +20,7 @@ function InfoForm({ userInfo }) {
   };
   const submitForm = async (values) => {
     await dispatch(updateOneUser(userInfo._id, values));
-    toast.success("Cập nhật thông tin thành công !", {
+    toast.success("Information updated successfully!", {
       position: toast.POSITION.BOTTOM_LEFT,
     });
   };
@@ -30,11 +30,11 @@ function InfoForm({ userInfo }) {
     const regex =
       /^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$/;
     if (!regex.test(values.phone)) {
-      errors.phone = "! Số điện thoại không chính xác";
+      errors.phone = "! Incorrect phone number";
     }
     // ID CARD
     if (values.cardId.length !== 9) {
-      errors.cardId = "! Số CMND không chính xác";
+      errors.cardId = "! Incorrect ID number";
     }
     return errors;
   };
@@ -60,14 +60,14 @@ function InfoForm({ userInfo }) {
             onSubmit={handleSubmit}
           >
             <h1 className="text-white text-sm lg:text-[15px] mb-5">
-              THÔNG TIN CƠ BẢN
+            BASIC INFORMATION
             </h1>
             <div className="mb-4">
               <label
                 htmlFor="name"
                 className="block mb-2 text-sm font-medium text-gray-300 dark:text-white"
               >
-                Họ tên thành viên
+                Member name
               </label>
               <input
                 type=""
@@ -85,7 +85,7 @@ function InfoForm({ userInfo }) {
                   htmlFor="cardId"
                   className="block mb-2 text-sm font-medium text-gray-300 dark:text-white"
                 >
-                  Số CMND
+                  ID number
                 </label>
                 <input
                   value={values.cardId}
@@ -106,7 +106,7 @@ function InfoForm({ userInfo }) {
                   htmlFor="gender"
                   className="block mb-2 text-sm font-medium text-gray-300 dark:text-white"
                 >
-                  Giới tính
+                  Sex
                 </label>
                 <select
                   id="gender"
@@ -131,11 +131,11 @@ function InfoForm({ userInfo }) {
                   aria-label="Default select example"
                 >
                   <option value="" disabled>
-                    --- Chọn giới tính ---
+                  --- Select gender ---
                   </option>
-                  <option value="Nam">Nam</option>
-                  <option value="Nữ">Nữ</option>
-                  <option value="KHác">Khác</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
             </div>
@@ -161,7 +161,7 @@ function InfoForm({ userInfo }) {
                 htmlFor="phone"
                 className="block mb-2 text-sm font-medium text-gray-300 dark:text-white"
               >
-                Số điện thoại
+               Phone number
               </label>
               <input
                 id="phone"
@@ -185,8 +185,8 @@ function InfoForm({ userInfo }) {
                   <span></span>
                   <p
                     data-start="good luck!"
-                    data-text="Tiếp tục!"
-                    data-title="Lưu thay đổi"
+                    data-text="Continue!"
+                    data-title="Save changes"
                   ></p>
                 </button>
               </div>

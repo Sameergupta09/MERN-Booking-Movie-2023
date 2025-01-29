@@ -183,8 +183,8 @@ return errors;
                   <span></span>
                   <p
                     data-start="good luck!"
-                    data-text="Tiếp tục!"
-                    data-title="Xác nhận"
+                    data-text="Continue!"
+                    data-title="Confirm"
                   ></p>
                 </button>
               </div>
